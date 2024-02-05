@@ -3,16 +3,21 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Scholarly HTML</title>
-  <link rel="stylesheet" href="css/scholarly.min.css">
+  <link rel="stylesheet"
+        href="css/scholarly.min.css">
   <script src="js/scholarly.min.js"></script>
 </head>
 
 <body prefix="schema: http://schema.org">
   <header>
     <div class="banner">
-      <img src="scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+      <img src="scholarly-html.svg"
+           width="227"
+           height="50"
+           alt="Scholarly HTML logo">
       <div class="status">SoRe ( Social Recommender System for WADe )</div>
     </div>
     <h1>Scholarly HTML</h1>
@@ -46,7 +51,9 @@
       </dd>
     </dl>
   </div>
-  <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+  <section typeof="sa:Abstract"
+           id="abstract"
+           role="doc-abstract">
     <h2>Abstract</h2>
     <p>
       In this document, we will keep track of the development of the SoRe project, a web modular system able to
@@ -57,7 +64,8 @@
       diagrams to exemplify the functionality
     </p>
   </section>
-  <section id="introduction" role="doc-introduction">
+  <section id="introduction"
+           role="doc-introduction">
     <!-- review? -->
     <h2>Introduction</h2>
     <p>
@@ -103,21 +111,47 @@
       <h3>Frontend</h3>
       <p>
         The angular framework will be used for the frontend due to its modular and component-based architecture.
-        Main Angular components are:
-        - authentication (login and logout)
-        - dashboard(list of interesting events, places and people based of user’s preferences)
-        - preference page (user can choose some favorite topics to get relevant recommendations from the website)
       </p>
+      <p> Main Angular components are:</p>
+      <p> - authentication (login and logout)</p>
+
+      <p>Users can not access any topic page if they are not logged in</p>
+
+      - dashboard(list of interesting news, health news and humor (memes and jokes) based of user’s preferences)
+      - preference page (user can choose some favorite topics to get relevant recommendations from the website)
+
       <p>
         Services:
         - authentication service (for user login, token retrieval (JWT Token), and token storage)
-        - people, events and places services (using HttpClient service for making HTTP requests)
-
       </p>
+      <img src="./images/access-token.png"
+           style="width:700px;height:400px;">
       <p>
-        Unit tests:
-        - jest testing framework, in combination with the Spectator library.
+        - routing (angular route guard).</p>
+      <p>
+        - people, events and places services (using HttpClient service for making HTTP requests)
       </p>
+      <div>
+        <p>
+          Application has a sidenav with the topics.
+        <p>-Recommended people</p>
+        <p>-News</p>
+        <p>-Health and Wellness</p>
+        <p>-Humor and Memes</p>
+        </p>
+        <img src="./images/topics.jpg">
+
+        <p>
+          Each tab gives informations based on the user preferrences.</p>
+
+        <img src="./images/news.png"
+             style="width:1000px;height:400px;">
+
+        <p>
+          This can be set after registering, but can also be editted after login by going to profile page.
+        </p>
+        <img src="./images/user-details.png">
+      </div>
     </section>
     <section id="article">
       <!-- review? -->
@@ -162,7 +196,8 @@
       Data structure and representations of the data after we create an user.
 
     </p>
-    <img src="./images/sturct1.png" style="width:1000px;height:500px;">
+    <img src="./images/sturct1.png"
+         style="width:1000px;height:500px;">
     <p>
       Each user will be saved in MongoDB with his attributes and the list of preferences that he chose after creating
       the profile. He can access the dashboard provided by our API ( we can call it SoreAPI ) to enrich the dashboard
